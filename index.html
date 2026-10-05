@@ -1,326 +1,227 @@
 <!DOCTYPE html>
+
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Squad Client</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQUAD CLIENT | Minecraft 1.8.9</title>
 
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    font-family:Arial,Tahoma,sans-serif;
-    background:#07050b;
-    color:white;
-    min-height:100vh;
-}
-
-body:before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 50% 20%,#7c2cff33,transparent 35%),
-    radial-gradient(circle at 10% 90%,#a855f722,transparent 30%);
-    pointer-events:none;
-}
-
-nav{
-    height:70px;
-    max-width:1100px;
-    margin:auto;
-    padding:0 20px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border-bottom:1px solid #ffffff10;
-}
-
-.logo{
-    font-size:22px;
-    font-weight:900;
-    letter-spacing:2px;
-}
-
-.logo span{
-    color:#a855f7;
-}
-
-.version{
-    color:#c084fc;
-    border:1px solid #a855f744;
-    padding:7px 13px;
-    border-radius:20px;
-    font-size:12px;
-}
-
-.hero{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
-    padding:100px 20px 70px;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 15px;
-    border-radius:30px;
-    background:#a855f712;
-    border:1px solid #a855f744;
-    color:#c084fc;
-    font-size:13px;
-    margin-bottom:25px;
-}
-
-h1{
-    font-size:clamp(48px,11vw,90px);
-    font-weight:900;
-    letter-spacing:-4px;
-}
-
-h1 span{
-    color:#a855f7;
-    text-shadow:0 0 35px #a855f766;
-}
-
-.subtitle{
-    max-width:600px;
-    margin:25px auto 30px;
-    color:#aaa3b2;
-    line-height:2;
-    font-size:15px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    text-decoration:none;
-    padding:15px 27px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:.2s;
-    display:inline-block;
-}
-
-.download{
-    background:#9333ea;
-    color:white;
-    box-shadow:0 10px 35px #9333ea44;
-}
-
-.download:hover{
-    transform:translateY(-3px);
-    background:#a855f7;
-}
-
-.more{
-    color:#ddd;
-    border:1px solid #33263d;
-    background:#0e0a13;
-}
-
-.more:hover{
-    border-color:#8b3dcc;
-}
-
-.features{
-    max-width:1050px;
-    margin:auto;
-    padding:20px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.card{
-    background:#0e0a13dd;
-    border:1px solid #241b2d;
-    border-radius:18px;
-    padding:25px;
-}
-
-.icon{
-    font-size:30px;
-    margin-bottom:12px;
-}
-
-.card h2{
-    font-size:17px;
-    margin-bottom:8px;
-}
-
-.card p{
-    color:#8f8996;
-    font-size:13px;
-    line-height:1.9;
-}
-
-.downloadBox{
-    max-width:850px;
-    margin:70px auto;
-    padding:20px;
-}
-
-.box{
-    text-align:center;
-    padding:35px 20px;
-    border-radius:22px;
-    border:1px solid #542d70;
-    background:linear-gradient(135deg,#6d21a822,#0e0a13);
-}
-
-.box h2{
-    font-size:27px;
-    margin-bottom:10px;
-}
-
-.box p{
-    color:#999;
-    margin-bottom:22px;
-    font-size:13px;
-}
-
-footer{
-    border-top:1px solid #ffffff0b;
-    text-align:center;
-    padding:30px;
-    color:#666;
-    font-size:12px;
-}
-
-@media(max-width:700px){
-    .features{
-        grid-template-columns:1fr;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .hero{
-        padding-top:70px;
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, #35105f 0%, #12091c 35%, #050505 75%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
 
-    h1{
-        letter-spacing:-2px;
+    .container {
+      width: 100%;
+      max-width: 850px;
+      text-align: center;
     }
 
-    .version{
-        display:none;
+    .card {
+      background: rgba(10, 10, 15, 0.92);
+      border: 1px solid #8b2cff;
+      border-radius: 24px;
+      padding: 45px 25px;
+      box-shadow:
+        0 0 25px rgba(139, 44, 255, 0.35),
+        0 0 70px rgba(139, 44, 255, 0.12);
     }
-}
-</style>
+
+    .logo {
+      font-size: 55px;
+      font-weight: 900;
+      letter-spacing: 5px;
+      color: #b45cff;
+      text-shadow:
+        0 0 10px #8b2cff,
+        0 0 30px #8b2cff;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #aaa;
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .version {
+      display: inline-block;
+      background: #1c1028;
+      border: 1px solid #8b2cff;
+      color: #c77dff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      margin-bottom: 30px;
+      font-weight: bold;
+    }
+
+    .download {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #8b2cff, #b84cff);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 16px 40px;
+      border-radius: 14px;
+      box-shadow: 0 0 25px rgba(139, 44, 255, 0.55);
+      transition: 0.2s;
+    }
+
+    .download:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 40px rgba(180, 70, 255, 0.8);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      background: #100c15;
+      border: 1px solid #30203d;
+      border-radius: 15px;
+      padding: 20px 10px;
+    }
+
+    .feature h3 {
+      color: #b45cff;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: #999;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .rubika {
+      margin-top: 30px;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .rubika a {
+      color: #b45cff;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    @media (max-width: 650px) {
+      .logo {
+        font-size: 38px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 35px 18px;
+      }
+
+      .download {
+        width: 100%;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">
-        SQUAD <span>CLIENT</span>
-    </div>
-
-    <div class="version">
-        MINECRAFT 1.8.9
-    </div>
-</nav>
-
-<section class="hero">
-
-    <div class="badge">
-        ⚡ SQUAD CLIENT 1.8.9
-    </div>
-
-    <h1>
-        SQUAD <span>CLIENT</span>
-    </h1>
-
-    <p class="subtitle">
-        کلاینت اختصاصی Squad برای Minecraft 1.8.9
-        با امکانات کاربردی، ظاهر حرفه‌ای و سازگاری با PojavLauncher.
-    </p>
-
-    <div class="buttons">
-
-        <a
-        class="btn download"
-        href="Squad-Client-1.8.9.zip"
-        download>
-        ⬇ دانلود کلاینت
-        </a>
-
-        <a
-        class="btn more"
-        href="#features">
-        مشاهده امکانات
-        </a>
-
-    </div>
-
-</section>
-
-<section class="features" id="features">
-
+  <div class="container">
     <div class="card">
-        <div class="icon">⚔️</div>
-        <h2>Combat</h2>
-        <p>
-            امکانات کاربردی برای تجربه بهتر PvP
-            در Minecraft 1.8.9.
-        </p>
+
+```
+  <div class="logo">SQUAD</div>
+
+  <div class="subtitle">
+    Minecraft Client
+  </div>
+
+  <div class="version">
+    Minecraft 1.8.9
+  </div>
+
+  <br>
+
+  <a
+    class="download"
+    href="https://rubika.ir/joinc/FGGCIADC0TIEWHLPNLBIBPNUDTLXRFXJ"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ⬇️ دانلود Squad Client
+  </a>
+
+  <div class="features">
+
+    <div class="feature">
+      <h3>⚔️ Combat</h3>
+      <p>
+        امکانات مخصوص PvP و بازی سریع
+      </p>
     </div>
 
-    <div class="card">
-        <div class="icon">⌨️</div>
-        <h2>Keystrokes & HUD</h2>
-        <p>
-            نمایش FPS، CPS و کلیدهای حرکتی
-            با رابط کاربری تمیز.
-        </p>
+    <div class="feature">
+      <h3>⌨️ HUD</h3>
+      <p>
+        نمایش FPS، CPS و Keystrokes
+      </p>
     </div>
 
-    <div class="card">
-        <div class="icon">⚙️</div>
-        <h2>ClickGUI</h2>
-        <p>
-            مدیریت سریع ماژول‌ها و تنظیمات
-            از داخل بازی.
-        </p>
+    <div class="feature">
+      <h3>⚙️ ClickGUI</h3>
+      <p>
+        مدیریت راحت امکانات کلاینت
+      </p>
     </div>
 
-</section>
+  </div>
 
-<section class="downloadBox">
+  <div class="rubika">
+    لینک دانلود و ارتباط:
+    <br>
+    <a
+      href="https://rubika.ir/joinc/FGGCIADC0TIEWHLPNLBIBPNUDTLXRFXJ"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Rubika
+    </a>
+  </div>
 
-    <div class="box">
+  <footer>
+    © 2026 SQUAD CLIENT
+  </footer>
 
-        <h2>
-            آماده‌ای وارد Squad بشی؟ 👑
-        </h2>
+</div>
+```
 
-        <p>
-            نسخه 1.8.9 کلاینت را دانلود کن و
-            داخل PojavLauncher اجراش کن.
-        </p>
-
-        <a
-        class="btn download"
-        href="Squad-Client-1.8.9.zip"
-        download>
-        دانلود Squad Client
-        </a>
-
-    </div>
-
-</section>
-
-<footer>
-    © 2026 Squad Client
-</footer>
+  </div>
 
 </body>
 </html>
