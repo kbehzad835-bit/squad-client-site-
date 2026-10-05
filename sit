@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Squad Client</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#07050b;
+    color:white;
+    min-height:100vh;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 50% 20%,#7c2cff33,transparent 35%),
+    radial-gradient(circle at 10% 90%,#a855f722,transparent 30%);
+    pointer-events:none;
+}
+
+nav{
+    height:70px;
+    max-width:1100px;
+    margin:auto;
+    padding:0 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #ffffff10;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#a855f7;
+}
+
+.version{
+    color:#c084fc;
+    border:1px solid #a855f744;
+    padding:7px 13px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+.hero{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+    padding:100px 20px 70px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 15px;
+    border-radius:30px;
+    background:#a855f712;
+    border:1px solid #a855f744;
+    color:#c084fc;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+h1{
+    font-size:clamp(48px,11vw,90px);
+    font-weight:900;
+    letter-spacing:-4px;
+}
+
+h1 span{
+    color:#a855f7;
+    text-shadow:0 0 35px #a855f766;
+}
+
+.subtitle{
+    max-width:600px;
+    margin:25px auto 30px;
+    color:#aaa3b2;
+    line-height:2;
+    font-size:15px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:15px 27px;
+    border-radius:12px;
+    font-weight:bold;
+    transition:.2s;
+    display:inline-block;
+}
+
+.download{
+    background:#9333ea;
+    color:white;
+    box-shadow:0 10px 35px #9333ea44;
+}
+
+.download:hover{
+    transform:translateY(-3px);
+    background:#a855f7;
+}
+
+.more{
+    color:#ddd;
+    border:1px solid #33263d;
+    background:#0e0a13;
+}
+
+.more:hover{
+    border-color:#8b3dcc;
+}
+
+.features{
+    max-width:1050px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.card{
+    background:#0e0a13dd;
+    border:1px solid #241b2d;
+    border-radius:18px;
+    padding:25px;
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.card h2{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#8f8996;
+    font-size:13px;
+    line-height:1.9;
+}
+
+.downloadBox{
+    max-width:850px;
+    margin:70px auto;
+    padding:20px;
+}
+
+.box{
+    text-align:center;
+    padding:35px 20px;
+    border-radius:22px;
+    border:1px solid #542d70;
+    background:linear-gradient(135deg,#6d21a822,#0e0a13);
+}
+
+.box h2{
+    font-size:27px;
+    margin-bottom:10px;
+}
+
+.box p{
+    color:#999;
+    margin-bottom:22px;
+    font-size:13px;
+}
+
+footer{
+    border-top:1px solid #ffffff0b;
+    text-align:center;
+    padding:30px;
+    color:#666;
+    font-size:12px;
+}
+
+@media(max-width:700px){
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-top:70px;
+    }
+
+    h1{
+        letter-spacing:-2px;
+    }
+
+    .version{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">
+        SQUAD <span>CLIENT</span>
+    </div>
+
+    <div class="version">
+        MINECRAFT 1.8.9
+    </div>
+</nav>
+
+<section class="hero">
+
+    <div class="badge">
+        ⚡ SQUAD CLIENT 1.8.9
+    </div>
+
+    <h1>
+        SQUAD <span>CLIENT</span>
+    </h1>
+
+    <p class="subtitle">
+        کلاینت اختصاصی Squad برای Minecraft 1.8.9
+        با امکانات کاربردی، ظاهر حرفه‌ای و سازگاری با PojavLauncher.
+    </p>
+
+    <div class="buttons">
+
+        <a
+        class="btn download"
+        href="Squad-Client-1.8.9.zip"
+        download>
+        ⬇ دانلود کلاینت
+        </a>
+
+        <a
+        class="btn more"
+        href="#features">
+        مشاهده امکانات
+        </a>
+
+    </div>
+
+</section>
+
+<section class="features" id="features">
+
+    <div class="card">
+        <div class="icon">⚔️</div>
+        <h2>Combat</h2>
+        <p>
+            امکانات کاربردی برای تجربه بهتر PvP
+            در Minecraft 1.8.9.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⌨️</div>
+        <h2>Keystrokes & HUD</h2>
+        <p>
+            نمایش FPS، CPS و کلیدهای حرکتی
+            با رابط کاربری تمیز.
+        </p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚙️</div>
+        <h2>ClickGUI</h2>
+        <p>
+            مدیریت سریع ماژول‌ها و تنظیمات
+            از داخل بازی.
+        </p>
+    </div>
+
+</section>
+
+<section class="downloadBox">
+
+    <div class="box">
+
+        <h2>
+            آماده‌ای وارد Squad بشی؟ 👑
+        </h2>
+
+        <p>
+            نسخه 1.8.9 کلاینت را دانلود کن و
+            داخل PojavLauncher اجراش کن.
+        </p>
+
+        <a
+        class="btn download"
+        href="Squad-Client-1.8.9.zip"
+        download>
+        دانلود Squad Client
+        </a>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Squad Client
+</footer>
+
+</body>
+</html>
